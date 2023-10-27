@@ -1,0 +1,45 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "urlPathTemplate": "/api/v1/customers/{customerId}",
+        "method": "GET",
+        "pathParameters": {
+          "customerId": {
+            "equalTo": "acct_1032D8"
+          }
+        }
+      },
+      "response": {
+        "status": 401,
+        "bodyFileName": "unauthorized-customer.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "urlPathTemplate": "/api/v1/customers/{customerId}",
+        "method": "GET",
+        "pathParameters": {
+          "customerId": {
+            "equalTo": "acct_1032D8"
+          }
+        },
+        "headers": {
+          "Authorization": {
+            "equalTo": "12912"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": "{\"accounts\": [{\"id\": \"2fc1aa\", \"currency\": \"gbp\"}, {\"id\": \"bd23c9\", \"currency\": \"ngn\"}]}",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    }
+  ]
+}
